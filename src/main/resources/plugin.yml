@@ -1,0 +1,6 @@
+name: "RegularReply"
+author: "Your Name"
+version: "0.1.0"
+main: "tech.expoli.plugin.RegularReplyMain"
+info: "定时发送消息 Web: https://expoli.tech"
+depends: []
