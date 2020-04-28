@@ -33,7 +33,7 @@ object RegularReplyMain : PluginBase() {
         logger.info("Plugin enabled!")
 
         subscribeGroupMessages {
-            (contains("打卡")){
+            (case("已打卡", ignoreCase = true, trim = true)){
                 //logger.info(senderName + "抽签")
                 val dayTemp = Calendar.getInstance().get(Calendar.DAY_OF_MONTH)
                 if (dayTemp > day) {
