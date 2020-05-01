@@ -19,12 +19,7 @@ object RegularReplyMain : PluginBase() {
     override fun onLoad() {
         super.onLoad()
         logger.info("onLoad")
-
     }
-
-    /**
-     * 检查当前时间，换了天数就把记录抽签的Map清楚掉
-     */
 
     override fun onEnable() {
         super.onEnable()
@@ -36,7 +31,7 @@ object RegularReplyMain : PluginBase() {
             (case("已打卡", ignoreCase = true, trim = true)){
                 //logger.info(senderName + "抽签")
                 val dayTemp = Calendar.getInstance().get(Calendar.DAY_OF_MONTH)
-                if (dayTemp > day) {
+                if (dayTemp != day) {
                     day = dayTemp
                     dk_single = 0
                 } else if (groupList.contains(this.group.id) && dk_single == 0) {
